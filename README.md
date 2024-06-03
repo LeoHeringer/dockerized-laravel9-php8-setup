@@ -1,9 +1,8 @@
+# Setting up Docker for Laravel 9 Projects with PHP 8
+[Subscribe to the Academy and Be VIP!](https://academy.especializati.com.br)
 
-# Setup Docker Para Projetos Laravel 9 com PHP 8
-[Assine a Academy, e Seja VIP!](https://academy.especializati.com.br)
-
-### Passo a passo
-Clone Repositório
+### Step by Step
+Clone Repository
 ```sh
 git clone https://github.com/especializati/setup-docker-laravel.git laravel9
 ```
@@ -12,27 +11,23 @@ git clone https://github.com/especializati/setup-docker-laravel.git laravel9
 cd laravel9/
 ```
 
-
-Alterne para a branch laravel 8.x
+Switch to the laravel 8.x branch
 ```sh
 git checkout laravel-9-com-php-8
 ```
 
-
-Remova o versionamento
+Remove versioning
 ```sh
 rm -rf .git/
 ```
 
-
-Crie o Arquivo .env
+Create the .env File
 ```sh
 cd example-project/
 cp .env.example .env
 ```
 
-
-Atualize as variáveis de ambiente do arquivo .env
+Update the environment variables in the .env file
 ```dosini
 APP_NAME=EspecializaTi
 APP_URL=http://localhost:8180
@@ -40,7 +35,7 @@ APP_URL=http://localhost:8180
 DB_CONNECTION=mysql
 DB_HOST=mysql
 DB_PORT=3306
-DB_DATABASE=nome_que_desejar_db
+DB_DATABASE=desired_db_name
 DB_USERNAME=root
 DB_PASSWORD=root
 
@@ -53,30 +48,25 @@ REDIS_PASSWORD=null
 REDIS_PORT=6379
 ```
 
-
-Suba os containers do projeto
+Start the project's containers
 ```sh
 docker-compose up -d
 ```
 
-
-Acessar o container
+Access the container
 ```sh
 docker-compose exec app bash
 ```
 
-
-Instalar as dependências do projeto
+Install project dependencies
 ```sh
 composer install
 ```
 
-
-Gerar a key do projeto Laravel
+Generate the Laravel project key
 ```sh
 php artisan key:generate
 ```
 
-
-Acesse o projeto
+Access the project
 [http://localhost:8180](http://localhost:8180)
